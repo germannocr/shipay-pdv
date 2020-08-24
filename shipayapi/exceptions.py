@@ -12,15 +12,3 @@ class InvalidFieldType(APIException):
     status_code = 400
     default_detail = "Invalid or incorrect type of one of the fields in the request. All fields are of type string."
     default_code = "incorrect_field_type"
-
-
-class InvalidCpfNumber(APIException):
-    status_code = 400
-    default_detail = "Invalid or incorrect cpf number in the request."
-    default_code = "incorrect_cpf_number"
-
-
-class InvalidCnpjNumber(APIException):
-    status_code = 400
-    default_detail = "Invalid or incorrect cnpj number in the request."
-    default_code = "incorrect_cnpj_number"

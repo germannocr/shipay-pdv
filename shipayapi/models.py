@@ -1,21 +1,21 @@
 from django.db import models
 
 
-class User(models.Model):
+class Establishment(models.Model):
 
     class Meta:
 
-        db_table = 'user'
+        db_table = 'establishment'
 
     id = models.IntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
-    user_token = models.CharField(max_length=120)
-    email = models.CharField(max_length=120)
-    password = models.CharField(max_length=60)
+    cnpj = models.CharField(max_length=60)
+    owner = models.CharField(max_length=120)
+    phone = models.CharField(max_length=120)
+
 
     def __str__(self):
-        return f'{self.name} {self.last_name}'
+        return f'{self.name} / {self.cnpj}'
 
 
 class Transaction(models.Model):
@@ -25,6 +25,6 @@ class Transaction(models.Model):
 
     establishment = models.CharField(max_length=60)
     description = models.CharField(max_length=120)
-    amount = models.DecimalField
+    amount = models.DecimalField(max_digits=7, decimal_places=2)
     customer = models.CharField(max_length=60)
 
