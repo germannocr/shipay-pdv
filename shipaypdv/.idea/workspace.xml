@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63519972-6f3e-48d2-9ef3-f5e998ab3906" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="92aa2532-b9d3-48cd-a435-c6141ba2121e" />
+  <component name="ProjectId" id="1gJjb5OqrduUOYtSLPKyrDjThBQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="conaferapp" type="Python.DjangoServer" factoryName="Django server">
+      <module name="conaferapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63519972-6f3e-48d2-9ef3-f5e998ab3906" name="Default Changelist" comment="" />
+      <created>1597839657540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597839657540</updated>
+      <workItem from="1597839658566" duration="23000" />
+      <workItem from="1597840047015" duration="8162000" />
+      <workItem from="1597862635591" duration="4058000" />
+      <workItem from="1598010415177" duration="5478000" />
+      <workItem from="1598016624658" duration="239000" />
+      <workItem from="1598271148277" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1504" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597848161318">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state x="1504" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848161318" />
+    <state x="420" y="198" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598013327535">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="420" y="198" width="583" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598013327535" />
+    <state x="509" y="163" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598014575816">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="1829" y="141" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597840066035" />
+    <state x="509" y="163" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598014575816" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1598015907613">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.0.bottom/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598015907613" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1597866725314" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1598015907613">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.0.center/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598015907613" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1597866725312" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1598015907612">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.0.left/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598015907612" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1597866725311" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1598015907613">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.0.right/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598015907613" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1597866725313" />
+    <state width="1314" height="230" key="GridCell.Tab.1.bottom" timestamp="1597848968032">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.1.bottom/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1314" height="230" key="GridCell.Tab.1.center" timestamp="1597848968032">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.1.center/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1314" height="230" key="GridCell.Tab.1.left" timestamp="1597848968032">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.1.left/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="1314" height="230" key="GridCell.Tab.1.right" timestamp="1597848968032">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state width="1314" height="230" key="GridCell.Tab.1.right/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848968032" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1597863950140">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1299.741@67.27.1299.741" timestamp="1597863950140" />
+    <state x="1535" y="18" key="SettingsEditor" timestamp="1597840072706">
+      <screen x="1366" y="0" width="1360" height="768" />
+    </state>
+    <state x="1535" y="18" key="SettingsEditor/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597840072706" />
+    <state x="421" y="145" width="591" height="522" key="find.popup" timestamp="1598014658943">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="1737" y="122" width="618" height="522" key="find.popup/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597841516557" />
+    <state x="421" y="145" width="591" height="522" key="find.popup/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1598014658943" />
+    <state x="395" y="113" width="672" height="655" key="search.everywhere.popup" timestamp="1597863335619">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="1709" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741/1366.0.1360.768@1366.0.1360.768" timestamp="1597848445970" />
+    <state x="395" y="113" width="672" height="655" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1597863335619" />
+  </component>
+</project>
