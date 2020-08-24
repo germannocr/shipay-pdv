@@ -1,1 +1,0 @@
-# shipay-pdv
