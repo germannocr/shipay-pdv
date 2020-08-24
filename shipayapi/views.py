@@ -1,25 +1,20 @@
 import json
 
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope
-from rest_condition import Or
-from rest_framework import generics, status
+from rest_framework import status
 
 # Create your views here.
-from rest_framework.authentication import SessionAuthentication
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.decorators import api_view
 
-from shipaypdv.shipayapi.mappers import map_post_response, map_get_response, map_invalid_post_response
-from shipaypdv.shipayapi.models import Post
-from shipaypdv.shipayapi.persistency import create_transaction
-from shipaypdv.shipayapi.serializers import TransactionSerializer
-from shipaypdv.shipayapi.validations import validate_post_body
+from shipayapi.mappers import map_post_response, map_get_response, map_invalid_post_response
+from shipayapi.models import Transaction, Establishment
+from shipayapi.persistency import create_transaction
+from shipayapi.serializers import TransactionSerializer
+from shipayapi.validations import validate_post_body
 
 
 @api_view(["POST"])
-def add_posts(request):
+def add_transaction(request):
     request_body = json.loads(request.body)
     try:
         validate_post_body(request_body=request_body)
@@ -41,8 +36,13 @@ def add_posts(request):
 
 
 @api_view(["GET"])
-def retrieve_posts(request):
-    user = request.user.id
-    posts = Post.objects.filter(created_by_user=user)
-    serializer_response = TransactionSerializer(posts, many=True)
-    return map_get_response(serializer_response)
+def retrieve_transactions(request):
+    establishment_cnpj = request.query_params.get('cnpj', None)
+    if establishment_cnpj:
+        establishment_object = Establishment.objects.filter(cnpj=establishment_cnpj)
+        transactions = Transaction.objects.filter(establishment=establishment_cnpj)
+    else:
+        raise Exception
+    transaction_dictionary = TransactionSerializer(transactions, many=True)
+    establishment_dictionary = TransactionSerializer(establishment_object, many=True)
+    return map_get_response(transaction_dictionary, establishment_dictionary)

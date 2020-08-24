@@ -1,6 +1,7 @@
 import re
 
-from shipaypdv.shipayapi.exceptions import MissingRequiredFields, InvalidFieldType, InvalidCpfNumber, InvalidCnpjNumber
+from shipayapi.exceptions import MissingRequiredFields, InvalidFieldType
+from shipayapi.mappers import map_invalid_post_response
 
 
 def validate_post_body(request_body: dict):
@@ -35,9 +36,10 @@ def validate_cpf_number(cpf_number: str):
         translated_cpf = ''.join(re.findall('\d', str(cpf_number)))
 
         if len(translated_cpf) < 11:
-            raise InvalidCpfNumber()
+            mapped_response = map_invalid_post_response()
+            return mapped_response
 
-        cpf_to_int = map(int, translated_cpf)
+        cpf_to_int = [int(digit) for digit in translated_cpf]
         new_cpf = cpf_to_int[:9]
 
         while len(new_cpf) < 11:
@@ -50,7 +52,8 @@ def validate_cpf_number(cpf_number: str):
             new_cpf.append(digit)
 
         if new_cpf != cpf_to_int:
-            raise InvalidCpfNumber()
+            mapped_response = map_invalid_post_response()
+            return mapped_response
 
 
 def validate_cnpj_number(cnpj_number: str):
@@ -59,9 +62,10 @@ def validate_cnpj_number(cnpj_number: str):
         translated_cnpj = ''.join(re.findall('\d', str(cnpj_number)))
 
         if len(translated_cnpj) < 14:
-            raise InvalidCnpjNumber()
+            mapped_response = map_invalid_post_response()
+            return mapped_response
 
-        cnpj_to_int = map(int, translated_cnpj)
+        cnpj_to_int = [int(digit) for digit in translated_cnpj]
         new_cnpj = cnpj_to_int[:12]
 
         validation_sequence = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
@@ -75,4 +79,5 @@ def validate_cnpj_number(cnpj_number: str):
             validation_sequence.insert(0, 6)
 
         if new_cnpj != cnpj_to_int:
-            raise InvalidCnpjNumber()
+            mapped_response = map_invalid_post_response()
+            return mapped_response
