@@ -1,16 +1,16 @@
 from rest_framework import serializers
 
-from shipaypdv.shipayapi.models import User, Post
+from shipayapi.models import Establishment, Transaction
 
 
-class UserSerializer(serializers.ModelSerializer):
+class EstablishmentSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
+        model = Establishment
         fields = '__all__'
 
 class TransactionSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Post
+        model = Transaction
         fields = '__all__'

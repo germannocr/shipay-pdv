@@ -1,4 +1,4 @@
-from shipaypdv.shipayapi.models import Transaction
+from shipayapi.models import Transaction
 
 
 def create_transaction(request_body: dict):
