@@ -17,12 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from shipaypdv.shipayapi import views
+from shipayapi import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^post/$', views.add_posts, name='post'),
-    url(r'^posts/retrieve$', views.retrieve_posts, name='get-list'),
+    url(r'^api/v1/transacao$', views.add_transaction, name='post'),
+    url(r'^api/v1/transacoes/estabelecimento', views.retrieve_transactions, name='get-list'),
 ]
-ipay
+
 

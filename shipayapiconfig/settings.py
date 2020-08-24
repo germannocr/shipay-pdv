@@ -25,8 +25,8 @@ SECRET_KEY = 'jh^=piu&a!b*4k+6kyljvc+p#^i_38pql7c#&gxhrm3id@gh-='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shipayapi.herokuapp.com']
-
+# ALLOWED_HOSTS = ['shipayapi.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
