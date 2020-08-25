@@ -26,7 +26,7 @@ def map_get_response(establishment_dictionary, transactions_dictionary):
     transactions_total = calculate_transactions_total(transactions_dictionary.data)
     return JsonResponse(
         {
-            'estabelecimento': establishment_dictionary.data,
+            'estabelecimento': establishment_dictionary.data[0],
             'recebimentos': transactions_dictionary.data,
             'total_recebidos': transactions_total
         },
@@ -36,7 +36,7 @@ def map_get_response(establishment_dictionary, transactions_dictionary):
 
 
 def calculate_transactions_total(transactions_list):
-    transaction_total = 0.0
+    transaction_total = 0
     for current_transaction in transactions_list:
-        transaction_total = transaction_total + current_transaction.get('amount', 0.0)
+        transaction_total = transaction_total + current_transaction.get('amount', 0)
     return transaction_total

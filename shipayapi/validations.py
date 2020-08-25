@@ -1,6 +1,6 @@
 import re
 
-from shipayapi.exceptions import MissingRequiredFields, InvalidFieldType
+from shipayapi.exceptions import MissingRequiredFields, InvalidFieldValue, InvalidCpfNumber, InvalidCnpjNumber
 from shipayapi.mappers import map_invalid_post_response
 
 
@@ -19,10 +19,10 @@ def validate_post_body(request_body: dict):
             raise MissingRequiredFields()
 
         if current_required_field == 'valor' and not isinstance(request_body[current_required_field], float):
-            raise InvalidFieldType()
+            raise InvalidFieldValue(code=400)
 
         if current_required_field != 'valor' and not isinstance(request_body[current_required_field], str):
-            raise InvalidFieldType()
+            raise InvalidFieldValue(code=400)
 
     customer_cpf = request_body.get('cliente')
     validate_cpf_number(cpf_number=customer_cpf)
@@ -36,8 +36,7 @@ def validate_cpf_number(cpf_number: str):
         translated_cpf = ''.join(re.findall('\d', str(cpf_number)))
 
         if len(translated_cpf) < 11:
-            mapped_response = map_invalid_post_response()
-            return mapped_response
+            raise InvalidCpfNumber(code=400)
 
         cpf_to_int = [int(digit) for digit in translated_cpf]
         new_cpf = cpf_to_int[:9]
@@ -52,8 +51,7 @@ def validate_cpf_number(cpf_number: str):
             new_cpf.append(digit)
 
         if new_cpf != cpf_to_int:
-            mapped_response = map_invalid_post_response()
-            return mapped_response
+            raise InvalidCpfNumber(code=400)
 
 
 def validate_cnpj_number(cnpj_number: str):
@@ -62,8 +60,7 @@ def validate_cnpj_number(cnpj_number: str):
         translated_cnpj = ''.join(re.findall('\d', str(cnpj_number)))
 
         if len(translated_cnpj) < 14:
-            mapped_response = map_invalid_post_response()
-            return mapped_response
+            raise InvalidCnpjNumber(code=400)
 
         cnpj_to_int = [int(digit) for digit in translated_cnpj]
         new_cnpj = cnpj_to_int[:12]
@@ -79,5 +76,4 @@ def validate_cnpj_number(cnpj_number: str):
             validation_sequence.insert(0, 6)
 
         if new_cnpj != cnpj_to_int:
-            mapped_response = map_invalid_post_response()
-            return mapped_response
+            raise InvalidCnpjNumber(code=400)
