@@ -7,10 +7,11 @@ class EstablishmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Establishment
-        fields = '__all__'
+        fields = ['name', 'cnpj', 'owner', 'phone']
+
 
 class TransactionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Transaction
-        fields = '__all__'
+        fields = ['establishment', 'description', 'amount', 'customer']
