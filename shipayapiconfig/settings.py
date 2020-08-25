@@ -25,7 +25,7 @@ SECRET_KEY = 'jh^=piu&a!b*4k+6kyljvc+p#^i_38pql7c#&gxhrm3id@gh-='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['shipayapi.herokuapp.com']
+# ALLOWED_HOSTS = ['shipay-pdv.herokuapp.com']
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'shipayapiconfig.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5di2s4cjfe7gc',
-        'USER': 'qrndpdomcqsuwg',
-        'PASSWORD': 'eb7cebd7c2e5be2bdda659f7c021145d222e5536c524e6c9aca0e564e5559097',
-        'HOST': 'ec2-18-211-48-247.compute-1.amazonaws.com',
+        'NAME': 'd2kkj0v24h6eop',
+        'USER': 'qcjejbgaexnczw',
+        'PASSWORD': 'c8fc4c3735f74a1506a01cfe434304574b15d4d159408c55ee433e12f8fc35a6',
+        'HOST': 'ec2-3-217-87-84.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
