@@ -1,2 +1,2 @@
 web: python manage.py
-web: gunicorn conafertest.wsgi --log-file -
+web: gunicorn shipayapiconfig.wsgi --log-file -
