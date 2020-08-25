@@ -28,6 +28,10 @@ DEBUG = True
 # ALLOWED_HOSTS = ['shipay-pdv.herokuapp.com']
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
+
 # Application definition
 
 INSTALLED_APPS = [
