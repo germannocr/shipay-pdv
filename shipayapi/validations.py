@@ -1,7 +1,9 @@
 import re
 
-from shipayapi.exceptions import MissingRequiredFields, InvalidFieldValue, InvalidCpfNumber, InvalidCnpjNumber
+from shipayapi.exceptions import MissingRequiredFields, InvalidFieldValue, InvalidCpfNumber, InvalidCnpjNumber, \
+    UnexistentEstablisment
 from shipayapi.mappers import map_invalid_post_response
+from shipayapi.models import Establishment
 
 
 def validate_post_body(request_body: dict):
@@ -77,3 +79,8 @@ def validate_cnpj_number(cnpj_number: str):
 
         if new_cnpj != cnpj_to_int:
             raise InvalidCnpjNumber(code=400)
+
+        establishment_object = Establishment.objects.filter(cnpj=cnpj_number)
+
+        if not establishment_object:
+            raise UnexistentEstablisment(code=404)

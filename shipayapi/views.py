@@ -7,6 +7,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import APIException
 
+from shipayapi.exceptions import MissingCnpjValue, UnexistentEstablisment
 from shipayapi.mappers import map_post_response, map_get_response, map_invalid_post_response
 from shipayapi.models import Transaction, Establishment
 from shipayapi.persistency import create_transaction
@@ -45,7 +46,6 @@ def add_transaction(request):
         )
 
 
-
 @api_view(["GET"])
 def retrieve_transactions(request):
     establishment_cnpj = request.query_params.get('cnpj', None)
@@ -53,8 +53,11 @@ def retrieve_transactions(request):
         establishment_object = Establishment.objects.filter(cnpj=establishment_cnpj)
         transactions = Transaction.objects.filter(establishment=establishment_cnpj)
     else:
-        raise Exception
-    transaction_dictionary = TransactionSerializer(transactions, many=True)
-    establishment_dictionary = EstablishmentSerializer(establishment_object, many=True)
-    return map_get_response(transactions_dictionary=transaction_dictionary,
-                            establishment_dictionary=establishment_dictionary)
+        raise MissingCnpjValue(code=400)
+    if establishment_object:
+        transaction_dictionary = TransactionSerializer(transactions, many=True)
+        establishment_dictionary = EstablishmentSerializer(establishment_object, many=True)
+        return map_get_response(transactions_dictionary=transaction_dictionary,
+                                establishment_dictionary=establishment_dictionary)
+    else:
+        raise UnexistentEstablisment(code=404)
