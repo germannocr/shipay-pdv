@@ -6,6 +6,15 @@ from shipayapi.models import Establishment
 
 
 def validate_post_body(request_body: dict):
+    """
+    Perform validations in JSON passed as body.
+
+    Parameters:
+        request_body (dict):The dictionary with the JSON body passed in the request.
+
+    Returns:
+        It doesn't have a return. It only throws an exception if any of the validations fail.
+    """
 
     required_fields = [
         'estabelecimento',
@@ -33,6 +42,16 @@ def validate_post_body(request_body: dict):
 
 
 def validate_cpf_number(cpf_number: str):
+    """
+    Perform validations in CPF customer number.
+
+    Parameters:
+        cpf_number (str):A string with an 11 digit number that represents the customer's CPF.
+                         It may contain hyphens and periods, or not.
+
+    Returns:
+        It doesn't have a return. It only throws an exception if any of the validations fail.
+    """
     if cpf_number:
         translated_cpf = ''.join(re.findall('\d', str(cpf_number)))
 
@@ -56,6 +75,16 @@ def validate_cpf_number(cpf_number: str):
 
 
 def validate_cnpj_number(cnpj_number: str):
+    """
+    Perform validations in CPF customer number.
+
+    Parameters:
+        cnpj_number (str):A string with an 14 digit number that represents the establishment's CNPJ.
+                         It may contain bars, hyphens and periods, or not.
+
+    Returns:
+        It doesn't have a return. It only throws an exception if any of the validations fail.
+    """
     if cnpj_number:
 
         translated_cnpj = ''.join(re.findall('\d', str(cnpj_number)))

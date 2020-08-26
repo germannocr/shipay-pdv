@@ -2,6 +2,16 @@ from django.db import models
 
 
 class Establishment(models.Model):
+    """
+    This is a class to represent an establishment with CNPJ.
+
+    Attributes:
+        id (int): The object unique identifier.
+        name (str): The establishment name.
+        cnpj (str): The establishment CNPJ unique number.
+        owner (str): The establishment owner name.
+        phone (str): The establishment phone contact.
+    """
 
     class Meta:
 
@@ -19,6 +29,15 @@ class Establishment(models.Model):
 
 
 class Transaction(models.Model):
+    """
+    This is a class to represent an establishment with CNPJ.
+
+    Attributes:
+        establishment (str): The establishment CNPJ unique number.
+        description (str): The transaction detailed description.
+        amount (Decimal): The transaction amount, with limit of 5 digits.
+        customer (str): The transaction customer' CPF unique number.
+    """
 
     class Meta:
         db_table = 'transaction'

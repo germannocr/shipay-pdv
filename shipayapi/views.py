@@ -1,5 +1,6 @@
 import json
 
+from django.core.handlers.wsgi import WSGIRequest
 from django.http import JsonResponse
 from rest_framework import status
 
@@ -16,7 +17,16 @@ from shipayapi.validations import validate_post_body
 
 
 @api_view(["POST"])
-def add_transaction(request):
+def add_transaction(request: WSGIRequest):
+    """
+    It allows the creation of new Transaction objects, as well all necessary validations.
+
+    Parameters:
+        request (WSGIRequest):The request object.
+
+    Returns:
+        JsonResponse:A JSON response object.
+    """
     request_body = json.loads(request.body)
     try:
         validate_post_body(request_body=request_body)
@@ -47,7 +57,16 @@ def add_transaction(request):
 
 
 @api_view(["GET"])
-def retrieve_transactions(request):
+def retrieve_transactions(request: WSGIRequest):
+    """
+    It allows the search of new Transaction objects, as well all necessary validations.
+
+    Parameters:
+        request (WSGIRequest):The request object.
+
+    Returns:
+        JsonResponse:A JSON response object.
+    """
     establishment_cnpj = request.query_params.get('cnpj', None)
     if establishment_cnpj:
         establishment_object = Establishment.objects.filter(cnpj=establishment_cnpj)
