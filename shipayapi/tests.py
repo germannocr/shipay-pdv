@@ -10,6 +10,7 @@ client = Client()
 API_URL = os.environ.get('API_URL', 'http://localhost:8000/api/v1/')
 
 
+
 # Create your tests here.
 class CreateTransactionsTest(TestCase):
 
