@@ -14,6 +14,7 @@ class CreateTransactionsTest(TestCase):
 
     def setUp(self):
         Establishment.objects.create(
+            id=1,
             name="Nosso Restaurante",
             cnpj="45.283.163/0001-67",
             owner="Fabio",
@@ -21,7 +22,7 @@ class CreateTransactionsTest(TestCase):
         )
 
         self.valid_payload = {
-            "estabelecimento": "63.754.223/0001-64",
+            "estabelecimento": "45.283.163/0001-67",
             "cliente": "094.214.930-01",
             "valor": 590.01,
             "descricao": "Almoço em restaurante chique pago via Shipay!"
@@ -55,6 +56,7 @@ class GetAllTransactions(TestCase):
     def setUp(self):
         self.establishment_cnpj = '45.283.163/0001-67'
         Establishment.objects.create(
+            id=1,
             name="Nosso Restaurante",
             cnpj=self.establishment_cnpj,
             owner="Fabio",
@@ -87,8 +89,9 @@ class GetAllTransactions(TestCase):
             f"{API_URL}transacoes/estabelecimento?cnpj={self.establishment_cnpj}",
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data.get('estabelecimento').get('cnpj'), self.establishment_cnpj)
-        self.assertEqual(response.data.get('total_recebidos'), 850.00)
+        response = json.loads(response.content)
+        self.assertEqual(response.get('estabelecimento').get('cnpj'), self.establishment_cnpj)
+        self.assertEqual(response.get('total_recebidos'), '850.00')
 
         response = client.get(
                 f"{API_URL}transacoes/estabelecimento?cnpj=63.754.223/0001-64",
