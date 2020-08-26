@@ -26,7 +26,6 @@ SECRET_KEY = 'jh^=piu&a!b*4k+6kyljvc+p#^i_38pql7c#&gxhrm3id@gh-='
 DEBUG = True
 
 ALLOWED_HOSTS = ['shipay-pdv.herokuapp.com']
-# ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False
