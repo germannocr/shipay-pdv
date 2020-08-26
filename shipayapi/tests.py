@@ -1,4 +1,5 @@
 import json
+import os
 
 from django.test import TestCase, Client
 from rest_framework import status
@@ -6,7 +7,7 @@ from rest_framework import status
 from shipayapi.models import Establishment, Transaction
 
 client = Client()
-API_URL = 'http://localhost:8000/api/v1/'
+API_URL = os.environ.get('API_URL', 'http://localhost:8000/api/v1/')
 
 
 # Create your tests here.
