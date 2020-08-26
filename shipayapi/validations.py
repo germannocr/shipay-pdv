@@ -2,7 +2,6 @@ import re
 
 from shipayapi.exceptions import MissingRequiredFields, InvalidFieldValue, InvalidCpfNumber, InvalidCnpjNumber, \
     UnexistentEstablisment
-from shipayapi.mappers import map_invalid_post_response
 from shipayapi.models import Establishment
 
 
